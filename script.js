@@ -166,10 +166,16 @@ const LinkedList = () {
         //represents your LinkedList objects as strings, so you can print them out and 
         //preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
 
+
+        let pointer = head;
+        let string = '';
+        while (pointer.nextNode !== null){
+            string += '${pointer.value} -> '
+        } return '${string}null';
         //let the pointer equal the head
         //declare a new empty string
         //while the pointer is NOT null:
-        //the string shoudl be += the $pointer value (leave a space between this and the next item)
+        //the string should be += the '${pointer.value} -> ' (leave a space between this and the next item)
         //make the pointer equal the pointer of the next node
         //exit
         //return '${string}null';
