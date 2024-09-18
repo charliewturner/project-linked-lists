@@ -7,7 +7,7 @@ const LinkedList = () {
     let size = 0;
 
 
-    const append(value) {
+    const append = (value) => {
         //adds a new node containing value to the end of the lis
         const newNode = (ListNode(value))
         
@@ -27,20 +27,31 @@ const LinkedList = () {
         //if the pointer of the next node is NOT null, let the pointer become the pointer of the nextnode
         //make the pointer of the next node become the new node
         //increase the size value by one outside of any loops
-
     }
 
-    const prepend(value) {
+    const prepend = (value) => {
         //adds a new node containing value to the start of the list
+
+        const newNode = (ListNode(value, head));
+        head = newNode;
+        size++;
 
         //make a new node as constant, passing in both the value and head arguments
         //make the head equal newnode
         //increment the size variable
     }
 
-    const at(index) {
+    const at = (index) => {
         // returns the node at the given index
 
+        let indexCount = 0;
+        let pointer = head;
+        while (indexCount < index){
+            pointer = pointer.nextNode
+            indexCount++;
+        }
+        size++;
+        
         //declare an indexCount variable
         //let the pointer = head
         //while the indexcount is less than the index argument passed in:
@@ -49,7 +60,7 @@ const LinkedList = () {
         //increment size outside of the loop
     }
 
-    const contains(value) {
+    const contains = (value) => {
         //returns true if the passed in value is in the list and otherwise returns false.
 
         //make the pointer equal to the head
@@ -59,7 +70,7 @@ const LinkedList = () {
         //return false if loop is unsuccessful
     }   
 
-    const find(value) {
+    const find = (value) => {
         //returns the index of the node containing value, or null if not found.
 
         //declare an index counter variable
@@ -71,7 +82,7 @@ const LinkedList = () {
         //return indexcounter outside loop (example code returns -1, not sure why)
     }
 
-    const size() {
+    const size = () => {
         // returns the total number of nodes in the list
 
         //declare counter 
@@ -82,14 +93,14 @@ const LinkedList = () {
         //return counter outside loop
     }
 
-    const head() {
+    const head = () => {
         //returns the first node in the list
 
         //let the pointer equal the head
         //return the pointer value
     }
 
-    const tail() {
+    const tail = () => {
         // returns the last node in the list
 
         //let the pointer equal the head
@@ -99,7 +110,7 @@ const LinkedList = () {
         //return the pointer
     }
 
-    const pop() {
+    const pop = () => {
         //removes the last element from the list
 
         //declare current pointer as head
@@ -114,7 +125,7 @@ const LinkedList = () {
         //return the return node
     }
 
-    const toString() {
+    const toString = () => {
         //represents your LinkedList objects as strings, so you can print them out and 
         //preview them in the console. The format should be: ( value ) -> ( value ) -> ( value ) -> null
 
@@ -125,5 +136,17 @@ const LinkedList = () {
         //make the pointer equal the pointer of the next node
         //exit
         //return '${string}null';
+    }
+    return{
+        append,
+        prepend,
+        get size(){ return size; },
+        get head(){ return head; },
+        at,
+        tail,
+        pop,
+        contains,
+        find,
+        toString,
     }
 }
