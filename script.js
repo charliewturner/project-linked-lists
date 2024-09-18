@@ -100,6 +100,12 @@ const LinkedList = () {
     const size = () => {
         // returns the total number of nodes in the list
 
+        let sizeCounter = 0;
+        let pointer = head;
+        while (pointer.nextNode !== null) {
+            pointer = pointer.nextNode;
+            sizeCounter++;
+        } return sizeCounter;
         //declare counter 
         //let pointer = head
         //if pointer = null, return counter
@@ -111,6 +117,8 @@ const LinkedList = () {
     const head = () => {
         //returns the first node in the list
 
+        let pointer = head;
+        return pointer.value;
         //let the pointer equal the head
         //return the pointer value
     }
