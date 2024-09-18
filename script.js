@@ -8,9 +8,20 @@ const LinkedList = () {
 
 
     const append(value) {
-        //adds a new node containing value to the end of the list
+        //adds a new node containing value to the end of the lis
+        const newNode = (ListNode(value))
+        
+        if (head == null){
+            newNode = head;
+        } else {
+            pointer = head;
+            while (pointer.nextNode !== null){
+                pointer = pointer.nextNode;
+            } pointer.nextNode = newNode;
+        }
+        size++;
 
-        //make a new node as contast (ListNode(value)
+        //make a new node as constant (ListNode(value)
         //if the head is currently null, make this node the head
         //otherwise, let the pointer become the head and
         //if the pointer of the next node is NOT null, let the pointer become the pointer of the nextnode
