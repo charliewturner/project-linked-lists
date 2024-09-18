@@ -126,6 +126,10 @@ const LinkedList = () {
     const tail = () => {
         // returns the last node in the list
 
+        let pointer = head;
+        while (pointer.nextNode !== null) {
+            pointer = pointer.nextNode;
+        } return pointer.value;
         //let the pointer equal the head
         //while the pointer of the next node is NOT null:
         //make the pointer equal the pointer of the next node
@@ -136,6 +140,16 @@ const LinkedList = () {
     const pop = () => {
         //removes the last element from the list
 
+        let currPointer = head;
+        let nextPointer = pointer.nextNode;
+        while (nextpointer !== null){
+            currPointer = currPointer.nextNode;
+            nextPointer = nextPointer.nextNode;
+        } 
+        const returnNode = nextPointer;
+        currPointer.nextNode = null;
+        size --;
+        return returnNode;
         //declare current pointer as head
         //declare nexxtpointer as the head of the next node
         //while the next pointer of the next note is NOT null:
