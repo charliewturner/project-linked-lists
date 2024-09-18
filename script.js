@@ -51,7 +51,7 @@ const LinkedList = () {
             indexCount++;
         }
         size++;
-        
+
         //declare an indexCount variable
         //let the pointer = head
         //while the indexcount is less than the index argument passed in:
@@ -63,6 +63,14 @@ const LinkedList = () {
     const contains = (value) => {
         //returns true if the passed in value is in the list and otherwise returns false.
 
+        let pointer = head;
+        while (pointer !== null){
+            if (pointer.value == value) return true;
+            else{
+                pointer = pointer.nextNode;
+            }
+            return false;
+        }
         //make the pointer equal to the head
         //while the pointer isnt null:
         //if the value on the current pointer equals the value passed in, return true
@@ -73,6 +81,13 @@ const LinkedList = () {
     const find = (value) => {
         //returns the index of the node containing value, or null if not found.
 
+
+        let indexCounter = 0;
+        let pointer = head;
+        while (pointer.value !== value){
+            pointer = pointer.nextNode;
+            indexCounter++;
+        } return indexCounter;
         //declare an index counter variable
         //let the pointer = head
         //while the pointer isnt null:
